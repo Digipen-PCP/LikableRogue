@@ -1,0 +1,2236 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "TechDemoLevel",
+	},
+	Archetyped = 
+	{
+		string Name = "550584ee9e7937be:TechDemoLevel",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [0, 0, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	LevelArchetypeController = 
+	{
+		int LevelDifficulty = 1,
+		Vec3 PlayerSpawn01 = [-144, 7, 0],
+		Vec3 PlayerSpawn02 = [0, 0, 0],
+		Vec3 PlayerSpawn03 = [0, 0, 0],
+		Vec3 PlayerSpawn04 = [0, 0, 0],
+		Vec3 PlayerSpawn05 = [0, 0, 0],
+		Vec3 PlayerSpawn06 = [0, 0, 0],
+	},
+	Hierarchy = 
+	{
+		ArchetypeInstance = 
+		{
+			string Name = "552191204f7af9d5:Room00",
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room00",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "552191204f7af9d5:Room00",
+			LinkId = 
+			{
+				uint Id = 3,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-66, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room00",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 4,
+			},
+			Named = 
+			{
+				string Name = "Room01",
+			},
+			Archetyped = 
+			{
+				string Name = "551e3c7664dd6e23:Room01",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-88, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = false,
+				bool EastExit = true,
+				bool SouthExit = true,
+				bool WestExit = true,
+				int NumberOfExits = 3,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = false,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 5,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b42e5fb51784:WestDoor",
+					LinkId = 
+					{
+						uint Id = 6,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-1, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WestDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b40542d13184:EastDoor",
+					LinkId = 
+					{
+						uint Id = 7,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [21, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "EastDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b5d5b28c9d96:SouthDoor",
+					LinkId = 
+					{
+						uint Id = 8,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, -1, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "SouthDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 9,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 10,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 11,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 12,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 13,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 14,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3d4fa6391787:Room06",
+			LinkId = 
+			{
+				uint Id = 15,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-22, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room06",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3de340a9b18d:Room02",
+			LinkId = 
+			{
+				uint Id = 16,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-44, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room02",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 17,
+			},
+			Named = 
+			{
+				string Name = "Room06",
+			},
+			Archetyped = 
+			{
+				string Name = "551e3d4fa6391787:Room06",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-110, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = false,
+				bool EastExit = true,
+				bool SouthExit = false,
+				bool WestExit = true,
+				int NumberOfExits = 2,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = false,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 18,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b42e5fb51784:WestDoor",
+					LinkId = 
+					{
+						uint Id = 19,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-1, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WestDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b40542d13184:EastDoor",
+					LinkId = 
+					{
+						uint Id = 20,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [21, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "EastDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 21,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 22,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 23,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 24,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 25,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 26,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e33888eb018fe:Room12",
+			LinkId = 
+			{
+				uint Id = 27,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-154, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room12",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 28,
+			},
+			Named = 
+			{
+				string Name = "Room00",
+			},
+			Archetyped = 
+			{
+				string Name = "552191204f7af9d5:Room00",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-132, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = true,
+				bool EastExit = true,
+				bool SouthExit = true,
+				bool WestExit = true,
+				int NumberOfExits = 4,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = false,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 29,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b4976d662d25:NorthDoor",
+					LinkId = 
+					{
+						uint Id = 30,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 15, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "NorthDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b42e5fb51784:WestDoor",
+					LinkId = 
+					{
+						uint Id = 31,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-1, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WestDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b40542d13184:EastDoor",
+					LinkId = 
+					{
+						uint Id = 32,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [21, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "EastDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b5d5b28c9d96:SouthDoor",
+					LinkId = 
+					{
+						uint Id = 33,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, -1, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "SouthDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 34,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 35,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 36,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 37,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 38,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 39,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 40,
+			},
+			Named = 
+			{
+				string Name = "Room13",
+			},
+			Archetyped = 
+			{
+				string Name = "551e3340fbaccf63:Room13",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = false,
+				bool EastExit = false,
+				bool SouthExit = true,
+				bool WestExit = false,
+				int NumberOfExits = 1,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = true,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 41,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b5d5b28c9d96:SouthDoor",
+					LinkId = 
+					{
+						uint Id = 42,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, -1, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "SouthDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 43,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 44,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 45,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 46,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 47,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 48,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e33888eb018fe:Room12",
+			LinkId = 
+			{
+				uint Id = 49,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-88, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room12",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3da24e8194a5:Room04",
+			LinkId = 
+			{
+				uint Id = 50,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-66, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room04",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3340fbaccf63:Room13",
+			LinkId = 
+			{
+				uint Id = 51,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [22, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room13",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3d89b9507301:Room05",
+			LinkId = 
+			{
+				uint Id = 52,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, -16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room05",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3eb68b1aeffe:Room08",
+			LinkId = 
+			{
+				uint Id = 53,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-66, -16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room08",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 54,
+			},
+			Named = 
+			{
+				string Name = "Room13",
+			},
+			Archetyped = 
+			{
+				string Name = "551e3340fbaccf63:Room13",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-66, 32, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = false,
+				bool EastExit = false,
+				bool SouthExit = true,
+				bool WestExit = false,
+				int NumberOfExits = 1,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = true,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 55,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b5d5b28c9d96:SouthDoor",
+					LinkId = 
+					{
+						uint Id = 56,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, -1, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "SouthDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 57,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 58,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 59,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 60,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 61,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 62,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e328fbd625bb6:Room11",
+			LinkId = 
+			{
+				uint Id = 63,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-132, -16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room11",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 64,
+			},
+			Named = 
+			{
+				string Name = "Room11",
+			},
+			Archetyped = 
+			{
+				string Name = "551e328fbd625bb6:Room11",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, -32, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = true,
+				bool EastExit = false,
+				bool SouthExit = false,
+				bool WestExit = false,
+				int NumberOfExits = 1,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = true,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 65,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b4976d662d25:NorthDoor",
+					LinkId = 
+					{
+						uint Id = 66,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 15, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "NorthDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 67,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 68,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 69,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 70,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 71,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 72,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3340fbaccf63:Room13",
+			LinkId = 
+			{
+				uint Id = 73,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-44, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room13",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3e46faf1017f:Room09",
+			LinkId = 
+			{
+				uint Id = 74,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-88, -16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room09",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 75,
+			},
+			Named = 
+			{
+				string Name = "Room08",
+			},
+			Archetyped = 
+			{
+				string Name = "551e3eb68b1aeffe:Room08",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [22, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			RoomController = 
+			{
+				bool NorthExit = true,
+				bool EastExit = false,
+				bool SouthExit = false,
+				bool WestExit = true,
+				int NumberOfExits = 2,
+				bool NorthRoomGenerated = false,
+				bool EastRoomGenerated = false,
+				bool SouthRoomGenerated = false,
+				bool WestRoomGenerated = false,
+				bool EnemiesDead = true,
+				bool EnemiesSpawned = true,
+				bool IsLootRoom = true,
+				bool LootSpawned = false,
+			},
+			Hierarchy = 
+			{
+				ArchetypeInstance = 
+				{
+					string Name = "5522eaa630647362:Background",
+					LinkId = 
+					{
+						uint Id = 76,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 7, -1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "Background",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b4976d662d25:NorthDoor",
+					LinkId = 
+					{
+						uint Id = 77,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [10, 15, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "NorthDoor",
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "5521b42e5fb51784:WestDoor",
+					LinkId = 
+					{
+						uint Id = 78,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [-1, 7, 1],
+						Vec3 Scale = [1.1, 1.1, 1.1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WestDoor",
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 79,
+					},
+					Named = 
+					{
+						string Name = "WallHolder",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Hierarchy = 
+					{
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 80,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, 15, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 81,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [21, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 82,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [10, -1, 0],
+								Vec3 Scale = [23, 1, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+						ArchetypeInstance = 
+						{
+							string Name = "5522c439f4af813c:BasicWall",
+							LinkId = 
+							{
+								uint Id = 83,
+							},
+							Transform = 
+							{
+								Vec3 Translation = [-1, 7, 0],
+								Vec3 Scale = [1, 15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Named = 
+							{
+								string Name = "Wall",
+							},
+						},
+					},
+				},
+				ArchetypeInstance = 
+				{
+					string Name = "550f564be7bf92ff:WallSpriteHolder",
+					LinkId = 
+					{
+						uint Id = 84,
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, 0.1],
+						Vec3 Scale = [1, 1, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Named = 
+					{
+						string Name = "WallSpriteHolder",
+					},
+				},
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551e3340fbaccf63:Room13",
+			LinkId = 
+			{
+				uint Id = 85,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-132, 16, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Room13",
+			},
+		},
+		ArchetypeInstance = 
+		{
+			string Name = "551aed6ca44b32ee:LevelExit",
+			LinkId = 
+			{
+				uint Id = 86,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [17, 11, -0.1],
+				Vec3 Scale = [2, 2, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "LevelExit",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 87,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-84, 11, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Mushroom",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 88,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-72, 3, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Mushroom",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 89,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-95, 4, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Pig",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 90,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-127, 3, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Cat",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 91,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-96, 12, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Pig",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 92,
+			},
+			Named = 
+			{
+				string Name = "Enemy",
+			},
+			Archetyped = 
+			{
+				string Name = "555896ce3c0fb42c:Enemy",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-116, 11, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 1, 1, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5274db4c2e7c11f9:Circle",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			RigidBody = 
+			{
+				bool Static = false,
+				bool Asleep = false,
+				bool Kinematic = false,
+				bool RotationLocked = true,
+				bool Mode2D = true,
+				bool AllowSleep = true,
+				bool Inherit2DMode = true,
+				Vec3 Velocity = [0, 0, 0],
+				Vec3 AngularVelocity = [0, 0, 0],
+			},
+			CapsuleCollider = 
+			{
+				bool Ghost = false,
+				bool SendsMessages = true,
+				bool Seamless = true,
+				string MaterialName = "5522c1021f9ffff0:NoBounceMaterial",
+				string SerializedGroupName = "55d7fa0ee4126d7a:EnemyCollisionGroup",
+				Vec3 Offset = [0, 0, 0],
+				float Radius = 0.23,
+				float Height = 1.25,
+				uint Direction = 1,
+			},
+			EnemyController = 
+			{
+				string PigDamageBoxArch = "5548d9352e8a70da:PigSlashDamagBox",
+				string MushroomShotArch = "55498398d1b5f35f:MushroomShot",
+				string TypeOfEnemy = "Cat",
+				string ActTextArch = "55c3d3f2a7a4ce46:ActText",
+				float DefaultHP = 5,
+				float StartingMoveSpeed = 2,
+				string Drop = "55dfddc25814a1f0:Drop",
+				string DeathParticleArche = "55d75955791bb063:DeathParticle",
+			},
+			EnemyRaycaster = 
+			{
+				float CastDistance = 1000,
+				Vec4 DrawColor = [1, 1, 1, 1],
+				float HeadSize = 0.25,
+				bool OnTop = true,
+			},
+			Hierarchy = 
+			{
+			},
+		},
+	},
+},

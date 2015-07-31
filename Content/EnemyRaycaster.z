@@ -26,49 +26,59 @@ class EnemyRaycaster : ZilchComponent
 
     function OnLogicUpdate(updateEvent : UpdateEvent)
     {
-        this.LocalVector = Real3(this.PlayerCog.Transform.Translation.X-this.Owner.Transform.Translation.X,//Get Player's X relative to the Enemy
-                this.PlayerCog.Transform.Translation.Y-this.Owner.Transform.Translation.Y, //Get Player's Y relative to the Enemy
-                0); 
-                
-        var transform = this.Owner.Transform;
-        // Get the ray start and direction`
-        
-        var ray = Ray();
-        ray.Start = transform.Translation;
-        ray.Direction = this.LocalVector;
-        ray.Direction = Math.Normalize(ray.Direction);
-        
-        //Create filter
-        var myFilter = CastFilter();
-
-        //Set filter properties
-        myFilter.IgnoreChildren = false;    //Ignore any child objects
-
-        //Set the filter to behave as being part of a Collision Group
-        myFilter.CollisionGroup = CollisionGroup.Find("EnemyRaycastCollision");
-
-        //Cast a filtered ray and store the first object found
-        var results = this.Space.PhysicsSpace.CastRayFirstFiltered(ray, myFilter);
-        
-        // Get how far away the object was that we hit
-        var distance = results.Distance;
-        
-        // Draw to the raycast point
-        var endPos = ray.Start + ray.Direction * distance;
-        
-        /*this.DrawArrow(ray.Start, endPos);
-        
-        Console.WriteLine(results.ObjectHit.Name); */ //for decoding
-        
-        if (results.ObjectHit.Name == "Wall")
+        if ( this.PlayerCog == null )
         {
-            this.Owner.EnemyController.Active = false;
+            this.PlayerCog = this.Space.FindObjectByName( "Player" );
         }
         else
         {
-            var seq = Action.Sequence(this.Owner.Actions);
-            Actions.Delay(seq, 0.3);
-            Actions.Call(seq, this.BeActive);
+            this.LocalVector = Real3(this.PlayerCog.Transform.Translation.X-this.Owner.Transform.Translation.X,//Get Player's X relative to the Enemy
+                    this.PlayerCog.Transform.Translation.Y-this.Owner.Transform.Translation.Y, //Get Player's Y relative to the Enemy
+                    0); 
+                    
+            var transform = this.Owner.Transform;
+            // Get the ray start and direction`
+            
+            var ray         = Ray();
+            ray.Start       = transform.Translation;
+            ray.Direction   = this.LocalVector;
+            ray.Direction   = Math.Normalize(ray.Direction);
+            
+            //Create filter
+            var myFilter = CastFilter();
+
+            //Set filter properties
+            myFilter.IgnoreChildren = false;    //Ignore any child objects
+
+            //Set the filter to behave as being part of a Collision Group
+            myFilter.CollisionGroup = CollisionGroup.Find("EnemyRaycastCollision");
+
+            //Cast a filtered ray and store the first object found
+            var results = this.Space.PhysicsSpace.CastRayFirstFiltered(ray, myFilter);
+            
+            // Get how far away the object was that we hit
+            var distance = results.Distance;
+            
+            // Draw to the raycast point
+            var endPos = ray.Start + ray.Direction * distance;
+            
+            /*this.DrawArrow(ray.Start, endPos);
+            
+            Console.WriteLine(results.ObjectHit.Name); */ //for decoding
+            
+            if ( results.ObjectHit != null )
+            {
+                if (results.ObjectHit.Name == "Wall")
+                {
+                    this.Owner.EnemyController.Active = false;
+                }
+                else
+                {
+                    var seq = Action.Sequence(this.Owner.Actions);
+                    Actions.Delay(seq, 0.3);
+                    Actions.Call(seq, this.BeActive);
+                }
+            }
         }
     }
     

@@ -35,22 +35,6 @@ class LevelController : ZilchComponent
     // Easy difficulty Levels
     [Property]
     var EasyLevel01 : Archetype = null;
-    [Property]
-    var EasyLevel02 : Archetype = null;
-    [Property]
-    var EasyLevel03 : Archetype = null;
-    
-    // Medium difficulty levels
-    [Property]
-    var MediumLevel01 : Archetype = null;
-    [Property]
-    var MediumLevel02 : Archetype = null;
-    
-    // Hard levels
-    [Property]
-    var HardLevel01 : Archetype = null;
-    [Property]
-    var HardLevel02 : Archetype = null;
     
     // Special tiles
     [Property]
@@ -88,15 +72,6 @@ class LevelController : ZilchComponent
         /// so that we can create them based off of how 
         /// difficult we want the player's experience to be.
         this.EasyLevels.Add( this.EasyLevel01 );
-        this.EasyLevels.Add( this.EasyLevel02 );
-        this.EasyLevels.Add( this.EasyLevel03 );
-        
-        this.MediumLevels.Add( this.MediumLevel01 );
-        this.MediumLevels.Add( this.MediumLevel02 );
-        //this.MediumLevels.Add( this.MediumLevel02 );
-        this.HardLevels.Add( this.HardLevel01 );
-        //this.HardLevels.Add( this.HardLevel02 );
-        // TODO: add more here once we have more levels
         
         // initialize the camera object
         // we position it where we want it later
@@ -130,12 +105,6 @@ class LevelController : ZilchComponent
             enemy.Destroy();
         }
         
-        // next, increment the LevelDifficulty
-        if ( this.LevelDifficulty < 3 )
-        {
-            this.LevelDifficulty += 1;
-        }
-        
         // destroy the current level to make way for a new one
         /// WARNING: THE FOLLOWING LINE OF CODE CONSTITUES WITCHCRAFT
         /// I DON'T KNOW HOW IT WORKS, SO DON'T ASK ME.
@@ -157,8 +126,8 @@ class LevelController : ZilchComponent
             this.CreateFlavorText( "You are now on floor `this.LevelsBeaten + 1`.    \n\nThere would have been an endgame condition here or something, but we ran out of time lol." );
         }
         
-        this.StairArowCog.Sprite.Visible=false;
-        this.StairArowCog.StairArowControler.StarsFound=false;
+        this.StairArowCog.Sprite.Visible = false;
+        this.StairArowCog.StairArowControler.StarsFound = false;
         
         ++this.LevelsBeaten;
     }
@@ -251,19 +220,22 @@ class LevelController : ZilchComponent
         var listOfRooms : HierarchyListrange = this.CurrentLevel.Children;
         foreach( var room in listOfRooms ) 
         {
-            var background = room.FindChildByName( "Background" );
-            var roomLocation : Real3 = background.Transform.WorldTranslation;
-            
-            // we only need the x and y difference, not Z
-            var xDifference : Integer = Math.Abs( spawnPoint.X - roomLocation.X ) as Integer;
-            var yDifference : Integer = Math.Abs( spawnPoint.Y - roomLocation.Y ) as Integer;
-            
-            if ( (xDifference == 0 as Integer) && (yDifference == 0 as Integer) )
+            if ( room.FindChildByName("Background") != null )
             {
-                // designate spawn room
-                //background.Sprite.Color = Real4( 0, 128, 255, 1.0 );
-                background.Parent.RoomController.EnemiesDead    = true;
-                background.Parent.RoomController.EnemiesSpawned = true;
+                var background = room.FindChildByName( "Background" );
+                var roomLocation : Real3 = background.Transform.WorldTranslation;
+                
+                // we only need the x and y difference, not Z
+                var xDifference : Integer = Math.Abs( spawnPoint.X - roomLocation.X ) as Integer;
+                var yDifference : Integer = Math.Abs( spawnPoint.Y - roomLocation.Y ) as Integer;
+                
+                if ( (xDifference == 0 as Integer) && (yDifference == 0 as Integer) )
+                {
+                    // designate spawn room
+                    //background.Sprite.Color = Real4( 0, 128, 255, 1.0 );
+                    background.Parent.RoomController.EnemiesDead    = true;
+                    background.Parent.RoomController.EnemiesSpawned = true;
+                }
             }
         }
         
@@ -280,113 +252,9 @@ class LevelController : ZilchComponent
         this.LevelCamera.Transform.Translation = Real3( spawnPoint.X, spawnPoint.Y, this.LevelCamera.Transform.Translation.Z );
     }
     
-    function SpawnPickupsAndExits ( /*listOfRooms : CogNameRange*/ ) 
+    function SpawnPickupsAndExits () 
     {
-        /// create a real3 using the camera's location (fuck it, it's easy)
-        var spawnLocation : Real3 = Real3( this.LevelCamera.Transform.WorldTranslation.X,
-                                           this.LevelCamera.Transform.WorldTranslation.Y,
-                                           0 );        
-        // cognamerange for every room
-        var listOfRooms : HierarchyListrange = this.CurrentLevel.Children;
-        
-        /// create some arrays to store enemies and pickups in the future
-        
-        // array for pickups
-        // TODO: create individual arrays for health, dmg, speed?
-        //var pickupsToSpawn : Array[Archetype] = Array[Archetype]();
-        
-        // arrays for rooms 
-        // this will be populated by the following foreach loop
-        var easyRooms : Array[Cog]      = Array[Cog]();
-        var mediumRooms : Array[Cog]    = Array[Cog]();
-        var hardRooms : Array[Cog]      = Array[Cog]();
-        // special rooms
-        var safeRooms : Array[Cog]      = Array[Cog]();
-        var lootRooms : Array[Cog]      = Array[Cog]();
-        
-        // Arrays for special room locations
-        var lootRoomLocations : Array[Real3] = Array[Real3]();
-        
-        // to check if special rooms have spawned
-        var spawnedLootRooms : Integer  = 0;
-        var maxLootRooms : Integer      = this.LevelDifficulty * this.LootRoomModifier; // 2 easy, 4 medium, 6 hard
-        var exitRoomSpawned : Boolean   = false;
-        
-        foreach ( var room in listOfRooms ) 
-        {
-            var background = room.FindChildByName( "Background" );
-            
-            // populate each array of rooms based off of
-            // relative distance between the room and the player
-            var roomLocation : Real3 = background.Transform.WorldTranslation;
-            
-            // we only need the x and y difference, not Z
-            var xDifference : Integer = Math.Abs( spawnLocation.X - roomLocation.X ) as Integer;
-            var yDifference : Integer = Math.Abs( spawnLocation.Y - roomLocation.Y ) as Integer;
-            
-            // check if we're not in the spawn room and we haven't spawned the max # of loot rooms yet
-            if ( (xDifference != 0 as Integer) && (yDifference != 0 as Integer) && (spawnedLootRooms < maxLootRooms) )
-            {
-                // also, check to make sure we're not too close to any other loot room
-                var lootRoomIsFarAway : Boolean = false;
-                if ( lootRoomLocations.Count != 0 )
-                {
-                    // run this check for each existing loot room
-                    foreach ( var lootRoom in lootRoomLocations )
-                    {
-                        var lootXDifference : Integer = Math.Abs( lootRoom.X - roomLocation.X ) as Integer;
-                        var lootYDifference : Integer = Math.Abs( lootRoom.Y - roomLocation.Y ) as Integer;
-                        
-                        // if the room is at least 50 units away in the x direction or 35 units away in the y,
-                        // spawn the loot room at this location
-                        if ( lootXDifference >= 30 || lootYDifference >= 22 )
-                        {
-                            lootRoomIsFarAway = true;
-                        }
-                    }
-                }
-                else 
-                {
-                    lootRoomIsFarAway = true;
-                }
-                
-                // get a random number between 0 and some multiple of 5 based off of the dynamic difficulty
-                var shouldSpawn : Integer = this.RandomGenerator.Range( 0, (25 * this.LevelDifficulty) ) as Integer;
-                // if that random number is less than or equal to two, spawn a loot room
-                if ( shouldSpawn <= 2 && lootRoomIsFarAway ) 
-                {
-                    ++spawnedLootRooms;
-                    lootRoomLocations.Add( roomLocation );
-                    background.Parent.RoomController.IsLootRoom  = true;
-                    background.Parent.RoomController.EnemiesDead = true;
-                    //background.Sprite.Color = Real4( 255, 240, 128, 1.00 );
-                }
-            }
-            
-            
-            if ( (xDifference != 0 as Integer) && (yDifference != 0 as Integer)
-                && (background.Parent.RoomController.IsLootRoom == false) && (exitRoomSpawned == false) )
-            {
-                exitRoomSpawned = true;
-                //background.Sprite.Color = Real4( 16, 255, 128, 1.00);
-                
-                // create an exit tile in the exit room
-                var minLocationToSpawn : Real3 = Real3( (background.Transform.WorldTranslation.X as Integer) - 6, 
-                                                        (background.Transform.WorldTranslation.Y as Integer) - 3, 
-                                                        0 );
-                var maxLocationToSpawn : Real3 = Real3( (background.Transform.WorldTranslation.X as Integer) + 6, 
-                                                        (background.Transform.WorldTranslation.Y as Integer) + 3, 
-                                                        0 );
-                // create the spawnpoint for the exit
-                var spawnPoint : Real3 = Real3( this.RandomGenerator.Range(minLocationToSpawn.X, maxLocationToSpawn.X) as Integer, 
-                                                this.RandomGenerator.Range(minLocationToSpawn.Y, maxLocationToSpawn.Y) as Integer,
-                                                -0.1 );
-
-                // spawn in the exit tile
-                this.Space.CreateAtPosition( this.LevelExit, spawnPoint );
-            }
-            
-        }
+        return;
     }
     
     function OnLogicUpdate(event : UpdateEvent)

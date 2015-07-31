@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.55785, -6.11509, 28.394],
+			Vec3 Translation = [0.395007, 1.5507, 28.394],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 89,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 20.1897,
+			float Size = 40.6571,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 18.394,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.55785, -6.11509, 10],
+			Vec3 LookTarget = [0.395007, 1.5507, 10],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -358,7 +358,7 @@ Level =
 			string FlavorText = "5511ea022e8d41d1:FlavorText",
 			int LevelDifficulty = 1,
 			float DynamicDifficulty = 1,
-			string EasyLevel01 = "551eefc556b12616:EasyFloorArchetype01",
+			string EasyLevel01 = "550584ee9e7937be:TechDemoLevel",
 			string EasyLevel02 = "55122cbd37e0cb25:EasyFloorArchetype02",
 			string EasyLevel03 = "55dfd876c3271e34:EasyFloorArchetype03",
 			string MediumLevel01 = "551a3ba390356dc1:MediumFloorArchetype01",

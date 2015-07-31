@@ -18,9 +18,9 @@ class LevelUpdateController : ZilchComponent
             {
                 this.Space.CreateAtPosition(this.LevelExitSoundArche, Real3(0,0,0));
                 // start routine to create new level
-                this.LevelManager.LevelController.SpawnNewLevel();
+                this.GameSession.Quit();
                 // destroy myself so there's not two exits
-                this.Owner.Destroy();
+                //this.Owner.Destroy();
             }
 
         }

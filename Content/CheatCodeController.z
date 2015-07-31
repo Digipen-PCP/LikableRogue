@@ -12,6 +12,7 @@ class CheatCodeController : ZilchComponent
     var SuperSpeed  : Boolean = false;
     var Noclip      : Boolean = false;
     var Berzerker   : Boolean = false;
+    var VeryHard    : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -26,7 +27,7 @@ class CheatCodeController : ZilchComponent
         // keep the HP at max if GodMode is enabled
         if ( this.GodMode == true )
         {
-            this.PlayerCog.PlayerController.CurentHP = this.PlayerCog.PlayerController.MaxHP;
+            this.PlayerCog.PlayerController.CurentHP = this.PlayerCog.PlayerController.MaxHP * 50;
         }
         
         /// begin keyboard shortcut detection ///
@@ -38,12 +39,12 @@ class CheatCodeController : ZilchComponent
             if ( this.GodMode == false )
             {
                 this.GodMode = true;
-                this.DisplayCheatText( this.SpriteText, "God mode enabled..." );
+                //this.DisplayCheatText( this.SpriteText, "God mode enabled..." );
             }
             else
             {
                 this.GodMode = false;
-                this.DisplayCheatText( this.SpriteText, "God mode disabled..." );
+                //this.DisplayCheatText( this.SpriteText, "God mode disabled..." );
             }
         }
         
@@ -80,6 +81,29 @@ class CheatCodeController : ZilchComponent
                 this.Noclip = false;
                 this.PlayerCog.CapsuleCollider.Ghost = false;
                 this.DisplayCheatText( this.SpriteText, "Noclip disabled..." );
+            }
+        }
+        
+        // super difficulty cheat
+        // used to show off chaos in later levels
+        // activated by pressing Shift+X
+        if ( Zero.Keyboard.KeyIsDown(Keys.Shift) && Zero.Keyboard.KeyIsPressed(Keys.X) )
+        {
+            if ( this.VeryHard == false )
+            {
+                this.VeryHard = true;
+                var levelManager = this.Space.FindObjectByName( "LevelManager" );
+                levelManager.LevelController.DynamicDifficulty  = 10.0;
+                levelManager.LevelController.LevelDifficulty    = 3;
+                Console.WriteLine( "Hardmode enabled" );
+            }
+            else
+            {
+                this.VeryHard = false;
+                var levelManager = this.Space.FindObjectByName( "LevelManager" );
+                levelManager.LevelController.DynamicDifficulty  = 2.0;
+                levelManager.LevelController.LevelDifficulty    = 1;
+                Console.WriteLine( "Hardmode disabled" );
             }
         }
     }
