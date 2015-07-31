@@ -87,7 +87,7 @@ Cog =
 			},
 			Sprite = 
 			{
-				bool Visible = false,
+				bool Visible = true,
 				bool VisibilityCulling = true,
 				bool VisibilityEvents = true,
 				bool CastShadows = false,
